@@ -1,0 +1,820 @@
+/* =========================================================
+   BASIC VARIABLES
+   MOBILE FIRST
+   ========================================================= */
+
+:root {
+
+    /* background */
+
+    --background: #fbfbfa;
+    --paper: #fffefa;
+
+
+    /* graphite text */
+
+    --text: #303234;
+    --heading: #26282a;
+    --muted: #686c70;
+
+
+    /* silver / steel */
+
+    --steel-dark: #35383b;
+    --steel-medium: #777c80;
+    --steel-light: #d6d9db;
+
+
+    /* page */
+
+    --page-max-width: 980px;
+
+
+    /* frame */
+
+    --main-corner-size: 58px;
+    --inner-corner-size: 40px;
+
+    --main-frame-width: 2px;
+    --inner-frame-width: 2px;
+
+
+    /* shadow */
+
+    --page-shadow:
+        0 16px 42px rgba(30, 32, 34, 0.10);
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    font-family:
+        Cambria,
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    line-height: 1.55;
+
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+a:hover,
+a:focus {
+
+    color: #111;
+
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.page-shell {
+
+    width: min(
+        100%,
+        var(--page-max-width)
+    );
+
+    margin: 0 auto;
+
+    padding: 10px;
+
+}
+
+
+/* =========================================================
+   FRAMES
+   ========================================================= */
+
+.ornate-frame {
+
+    position: relative;
+
+    background: var(--paper);
+
+}
+
+
+.ornate-frame--main {
+
+    box-shadow: var(--page-shadow);
+
+}
+
+
+/* =========================================================
+   FRAME CONTENT
+   ========================================================= */
+
+.frame-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =========================================================
+   MAIN HERO
+   ========================================================= */
+
+.hero {
+
+    padding:
+
+        70px
+        24px
+        36px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.brand-logo {
+
+    display: block;
+
+    width: min(
+        44vw,
+        220px
+    );
+
+    max-width: 220px;
+
+    height: auto;
+
+    margin:
+
+        0 auto
+        24px;
+
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+
+    color: var(--heading);
+
+    font-weight: 600;
+
+}
+
+
+h1 {
+
+    margin:
+
+        0.2em
+        0
+        0.16em;
+
+    font-size:
+        clamp(
+            2.2rem,
+            8vw,
+            4.6rem
+        );
+
+    line-height: 1.02;
+
+}
+
+
+h2 {
+
+    margin:
+
+        1.35em
+        0
+        0.55em;
+
+    font-size:
+        clamp(
+            1.35rem,
+            5vw,
+            2rem
+        );
+
+}
+
+
+h3 {
+
+    font-size: 1.15rem;
+
+}
+
+
+.kicker {
+
+    margin:
+
+        0
+        0
+        2rem;
+
+    color: var(--muted);
+
+    letter-spacing: 0.18em;
+
+}
+
+
+.lead {
+
+    max-width: 680px;
+
+    margin:
+
+        0 auto
+        2.5rem;
+
+    font-size: 1.03rem;
+
+}
+
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.welcome {
+
+    max-width: 760px;
+
+    margin:
+
+        0 auto
+        2.4rem;
+
+}
+
+
+.welcome p {
+
+    margin:
+
+        0
+        0
+        1.15rem;
+
+}
+
+
+/* =========================================================
+   LANGUAGE CONTENTS
+   ========================================================= */
+
+.language-index {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+
+    margin-top: 2.7rem;
+
+}
+
+
+/* =========================================================
+   LANGUAGE CONTENT CARD
+   ========================================================= */
+
+.index-card {
+
+    padding:
+
+        34px
+        28px
+        30px;
+
+    text-align: left;
+
+}
+
+
+.index-card h3 {
+
+    margin:
+
+        0
+        0
+        0.95rem;
+
+    text-align: center;
+
+    font-size: 1.3rem;
+
+}
+
+
+.index-card ul {
+
+    margin: 0;
+
+    padding-left: 1.2rem;
+
+}
+
+
+.index-card li {
+
+    margin:
+
+        0.32rem
+        0;
+
+}
+
+
+.index-card a {
+
+    display: inline-block;
+
+}
+
+
+/* =========================================================
+   LANGUAGE CONTENT
+   ========================================================= */
+
+.language-section {
+
+    margin-top: 18px;
+
+    padding:
+
+        42px
+        22px
+        64px;
+
+    background: var(--paper);
+
+    box-shadow: var(--page-shadow);
+
+}
+
+
+.language-section section {
+
+    scroll-margin-top: 18px;
+
+}
+
+
+.language-section h2 {
+
+    margin-top: 1.7rem;
+
+}
+
+
+.language-section ul,
+.language-section ol {
+
+    padding-left: 1.45rem;
+
+}
+
+
+.language-section ul ul {
+
+    margin-top: 0.4rem;
+
+}
+
+
+.language-section li {
+
+    margin:
+
+        0.44rem
+        0;
+
+}
+
+
+/* =========================================================
+   UKRAINIAN PLACEHOLDER
+   ========================================================= */
+
+.language-section--placeholder {
+
+    min-height: 220px;
+
+}
+
+
+/* =========================================================
+   CORNER SVG FILES
+   ========================================================= */
+
+.corner {
+
+    position: absolute;
+
+    z-index: 4;
+
+    display: block;
+
+    pointer-events: none;
+
+}
+
+
+/* main frame corners */
+
+.ornate-frame--main > .corner {
+
+    width: var(--main-corner-size);
+
+    height: var(--main-corner-size);
+
+}
+
+
+/* inner frame corners */
+
+.ornate-frame--inner > .corner {
+
+    width: var(--inner-corner-size);
+
+    height: var(--inner-corner-size);
+
+}
+
+
+/* =========================================================
+   CORNER POSITIONS
+   ========================================================= */
+
+.tl {
+
+    top: 0;
+
+    left: 0;
+
+}
+
+
+.tr {
+
+    top: 0;
+
+    right: 0;
+
+    transform: rotate(90deg);
+
+}
+
+
+.br {
+
+    right: 0;
+
+    bottom: 0;
+
+    transform: rotate(180deg);
+
+}
+
+
+.bl {
+
+    bottom: 0;
+
+    left: 0;
+
+    transform: rotate(270deg);
+
+}
+
+
+/* =========================================================
+   STRAIGHT FRAME LINES
+   ========================================================= */
+
+.frame-line {
+
+    position: absolute;
+
+    z-index: 3;
+
+}
+
+
+/* =========================================================
+   HORIZONTAL STEEL GRADIENT
+   ========================================================= */
+
+.frame-line.top,
+.frame-line.bottom {
+
+    background:
+
+        linear-gradient(
+            90deg,
+
+            var(--steel-dark) 0%,
+
+            var(--steel-medium) 28%,
+
+            var(--steel-light) 50%,
+
+            var(--steel-medium) 72%,
+
+            var(--steel-dark) 100%
+        );
+
+}
+
+
+/* =========================================================
+   VERTICAL STEEL GRADIENT
+   ========================================================= */
+
+.frame-line.left,
+.frame-line.right {
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            var(--steel-dark) 0%,
+
+            var(--steel-medium) 28%,
+
+            var(--steel-light) 50%,
+
+            var(--steel-medium) 72%,
+
+            var(--steel-dark) 100%
+        );
+
+}
+
+
+/* =========================================================
+   MAIN FRAME LINES
+   ========================================================= */
+
+.ornate-frame--main > .frame-line.top,
+.ornate-frame--main > .frame-line.bottom {
+
+    height: var(--main-frame-width);
+
+    left:
+        calc(
+            var(--main-corner-size) * 0.48
+        );
+
+    right:
+        calc(
+            var(--main-corner-size) * 0.48
+        );
+
+}
+
+
+.ornate-frame--main > .frame-line.left,
+.ornate-frame--main > .frame-line.right {
+
+    width: var(--main-frame-width);
+
+    top:
+        calc(
+            var(--main-corner-size) * 0.48
+        );
+
+    bottom:
+        calc(
+            var(--main-corner-size) * 0.48
+        );
+
+}
+
+
+/* =========================================================
+   INNER FRAME LINES
+   ========================================================= */
+
+.ornate-frame--inner > .frame-line.top,
+.ornate-frame--inner > .frame-line.bottom {
+
+    height: var(--inner-frame-width);
+
+    left:
+        calc(
+            var(--inner-corner-size) * 0.48
+        );
+
+    right:
+        calc(
+            var(--inner-corner-size) * 0.48
+        );
+
+}
+
+
+.ornate-frame--inner > .frame-line.left,
+.ornate-frame--inner > .frame-line.right {
+
+    width: var(--inner-frame-width);
+
+    top:
+        calc(
+            var(--inner-corner-size) * 0.48
+        );
+
+    bottom:
+        calc(
+            var(--inner-corner-size) * 0.48
+        );
+
+}
+
+
+/* =========================================================
+   LINE POSITIONS
+   ========================================================= */
+
+.top {
+    top: 0;
+}
+
+
+.bottom {
+    bottom: 0;
+}
+
+
+.left {
+    left: 0;
+}
+
+
+.right {
+    right: 0;
+}
+
+
+/* =========================================================
+   TABLET / DESKTOP
+   ========================================================= */
+
+@media
+(min-width: 700px) {
+
+    :root {
+
+        --main-corner-size: 76px;
+
+        --inner-corner-size: 48px;
+
+    }
+
+
+    .page-shell {
+
+        padding: 24px;
+
+    }
+
+
+    .hero {
+
+        padding:
+
+            94px
+            64px
+            48px;
+
+    }
+
+
+    .index-card {
+
+        padding:
+
+            40px
+            54px
+            34px;
+
+    }
+
+
+    .language-section {
+
+        padding:
+
+            58px
+            64px
+            82px;
+
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media
+(min-width: 1100px) {
+
+    :root {
+
+        --main-corner-size: 86px;
+
+        --inner-corner-size: 52px;
+
+    }
+
+}
+
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+    body {
+
+        background: white;
+
+    }
+
+
+    .page-shell {
+
+        width: 100%;
+
+        max-width: none;
+
+        padding: 0;
+
+    }
+
+
+    .ornate-frame--main,
+    .language-section {
+
+        box-shadow: none;
+
+    }
+
+}
