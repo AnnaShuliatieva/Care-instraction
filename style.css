@@ -1,48 +1,26 @@
 /* =========================================================
-   BASIC VARIABLES
    MOBILE FIRST
    ========================================================= */
 
 :root {
 
-    /* background */
-
     --background: #fbfbfa;
     --paper: #fffefa;
-
-
-    /* graphite text */
 
     --text: #303234;
     --heading: #26282a;
     --muted: #686c70;
 
-
-    /* silver / steel */
-
     --steel-dark: #35383b;
     --steel-medium: #777c80;
     --steel-light: #d6d9db;
 
+    --frame-width: 2px;
 
-    /* page */
-
-    --page-max-width: 980px;
-
-
-    /* frame */
-
-    --main-corner-size: 58px;
-    --inner-corner-size: 40px;
-
-    --main-frame-width: 2px;
-    --inner-frame-width: 2px;
-
-
-    /* shadow */
+    --page-max-width: 860px;
 
     --page-shadow:
-        0 16px 42px rgba(30, 32, 34, 0.10);
+        0 12px 32px rgba(30, 32, 34, 0.08);
 
 }
 
@@ -102,37 +80,33 @@ a:focus {
 
 
 /* =========================================================
-   PAGE
+   GENERAL PAGE
    ========================================================= */
 
 .page-shell {
 
-    width: min(
-        100%,
-        var(--page-max-width)
-    );
+    width: 100%;
+
+    max-width: var(--page-max-width);
 
     margin: 0 auto;
 
-    padding: 10px;
+    padding: 8px;
 
 }
 
 
 /* =========================================================
-   FRAMES
+   SIMPLE RECTANGULAR FRAME
    ========================================================= */
 
-.ornate-frame {
+.page-frame {
 
     position: relative;
 
     background: var(--paper);
 
-}
-
-
-.ornate-frame--main {
+    border: var(--frame-width) solid var(--steel-medium);
 
     box-shadow: var(--page-shadow);
 
@@ -140,29 +114,16 @@ a:focus {
 
 
 /* =========================================================
-   FRAME CONTENT
+   FIRST PAGE
    ========================================================= */
 
-.frame-content {
-
-    position: relative;
-
-    z-index: 2;
-
-}
-
-
-/* =========================================================
-   MAIN HERO
-   ========================================================= */
-
-.hero {
+.intro-page {
 
     padding:
 
-        70px
-        24px
-        36px;
+        44px
+        20px
+        34px;
 
     text-align: center;
 
@@ -178,18 +139,16 @@ a:focus {
     display: block;
 
     width: min(
-        44vw,
-        220px
+        38vw,
+        180px
     );
-
-    max-width: 220px;
 
     height: auto;
 
     margin:
 
         0 auto
-        24px;
+        22px;
 
 }
 
@@ -215,16 +174,17 @@ h1 {
 
         0.2em
         0
-        0.16em;
+        0.18em;
 
     font-size:
+
         clamp(
-            2.2rem,
-            8vw,
-            4.6rem
+            2.1rem,
+            9vw,
+            4.1rem
         );
 
-    line-height: 1.02;
+    line-height: 1.04;
 
 }
 
@@ -233,15 +193,16 @@ h2 {
 
     margin:
 
-        1.35em
+        1.25em
         0
         0.55em;
 
     font-size:
+
         clamp(
-            1.35rem,
+            1.3rem,
             5vw,
-            2rem
+            1.9rem
         );
 
 }
@@ -264,21 +225,19 @@ h3 {
 
     color: var(--muted);
 
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
 
 }
 
 
 .lead {
 
-    max-width: 680px;
+    max-width: 650px;
 
     margin:
 
         0 auto
-        2.5rem;
-
-    font-size: 1.03rem;
+        2.2rem;
 
 }
 
@@ -289,12 +248,12 @@ h3 {
 
 .welcome {
 
-    max-width: 760px;
+    max-width: 720px;
 
     margin:
 
         0 auto
-        2.4rem;
+        2.2rem;
 
 }
 
@@ -305,88 +264,85 @@ h3 {
 
         0
         0
-        1.15rem;
+        1.05rem;
 
 }
 
 
 /* =========================================================
    LANGUAGE CONTENTS
+   NO FRAMES
    ========================================================= */
 
 .language-index {
 
-    display: grid;
+    width: 100%;
 
-    grid-template-columns: 1fr;
+    max-width: 680px;
 
-    gap: 22px;
+    margin:
 
-    margin-top: 2.7rem;
-
-}
-
-
-/* =========================================================
-   LANGUAGE CONTENT CARD
-   ========================================================= */
-
-.index-card {
-
-    padding:
-
-        34px
-        28px
-        30px;
+        2.4rem auto
+        0;
 
     text-align: left;
 
 }
 
 
-.index-card h3 {
+.index-block {
+
+    padding:
+
+        0
+        8px;
+
+}
+
+
+.index-block + .index-block {
+
+    margin-top: 2.25rem;
+
+}
+
+
+.index-block h3 {
 
     margin:
 
         0
         0
-        0.95rem;
+        0.9rem;
 
     text-align: center;
 
-    font-size: 1.3rem;
+    font-size: 1.25rem;
 
 }
 
 
-.index-card ul {
+.index-block ul {
 
     margin: 0;
 
-    padding-left: 1.2rem;
+    padding-left: 1.35rem;
 
 }
 
 
-.index-card li {
+.index-block li {
 
     margin:
 
-        0.32rem
+        0.35rem
         0;
 
 }
 
 
-.index-card a {
-
-    display: inline-block;
-
-}
-
-
 /* =========================================================
-   LANGUAGE CONTENT
+   INSTRUCTION PAGES
    ========================================================= */
 
 .language-section {
@@ -395,27 +351,23 @@ h3 {
 
     padding:
 
-        42px
-        22px
-        64px;
-
-    background: var(--paper);
-
-    box-shadow: var(--page-shadow);
+        34px
+        20px
+        52px;
 
 }
 
 
 .language-section section {
 
-    scroll-margin-top: 18px;
+    scroll-margin-top: 20px;
 
 }
 
 
 .language-section h2 {
 
-    margin-top: 1.7rem;
+    margin-top: 1.6rem;
 
 }
 
@@ -423,14 +375,14 @@ h3 {
 .language-section ul,
 .language-section ol {
 
-    padding-left: 1.45rem;
+    padding-left: 1.4rem;
 
 }
 
 
 .language-section ul ul {
 
-    margin-top: 0.4rem;
+    margin-top: 0.35rem;
 
 }
 
@@ -439,7 +391,7 @@ h3 {
 
     margin:
 
-        0.44rem
+        0.42rem
         0;
 
 }
@@ -449,264 +401,10 @@ h3 {
    UKRAINIAN PLACEHOLDER
    ========================================================= */
 
-.language-section--placeholder {
+.ukrainian-placeholder {
 
-    min-height: 220px;
+    min-height: 360px;
 
-}
-
-
-/* =========================================================
-   CORNER SVG FILES
-   ========================================================= */
-
-.corner {
-
-    position: absolute;
-
-    z-index: 4;
-
-    display: block;
-
-    pointer-events: none;
-
-}
-
-
-/* main frame corners */
-
-.ornate-frame--main > .corner {
-
-    width: var(--main-corner-size);
-
-    height: var(--main-corner-size);
-
-}
-
-
-/* inner frame corners */
-
-.ornate-frame--inner > .corner {
-
-    width: var(--inner-corner-size);
-
-    height: var(--inner-corner-size);
-
-}
-
-
-/* =========================================================
-   CORNER POSITIONS
-   ========================================================= */
-
-.tl {
-
-    top: 0;
-
-    left: 0;
-
-}
-
-
-.tr {
-
-    top: 0;
-
-    right: 0;
-
-    transform: rotate(90deg);
-
-}
-
-
-.br {
-
-    right: 0;
-
-    bottom: 0;
-
-    transform: rotate(180deg);
-
-}
-
-
-.bl {
-
-    bottom: 0;
-
-    left: 0;
-
-    transform: rotate(270deg);
-
-}
-
-
-/* =========================================================
-   STRAIGHT FRAME LINES
-   ========================================================= */
-
-.frame-line {
-
-    position: absolute;
-
-    z-index: 3;
-
-}
-
-
-/* =========================================================
-   HORIZONTAL STEEL GRADIENT
-   ========================================================= */
-
-.frame-line.top,
-.frame-line.bottom {
-
-    background:
-
-        linear-gradient(
-            90deg,
-
-            var(--steel-dark) 0%,
-
-            var(--steel-medium) 28%,
-
-            var(--steel-light) 50%,
-
-            var(--steel-medium) 72%,
-
-            var(--steel-dark) 100%
-        );
-
-}
-
-
-/* =========================================================
-   VERTICAL STEEL GRADIENT
-   ========================================================= */
-
-.frame-line.left,
-.frame-line.right {
-
-    background:
-
-        linear-gradient(
-            180deg,
-
-            var(--steel-dark) 0%,
-
-            var(--steel-medium) 28%,
-
-            var(--steel-light) 50%,
-
-            var(--steel-medium) 72%,
-
-            var(--steel-dark) 100%
-        );
-
-}
-
-
-/* =========================================================
-   MAIN FRAME LINES
-   ========================================================= */
-
-.ornate-frame--main > .frame-line.top,
-.ornate-frame--main > .frame-line.bottom {
-
-    height: var(--main-frame-width);
-
-    left:
-        calc(
-            var(--main-corner-size) * 0.48
-        );
-
-    right:
-        calc(
-            var(--main-corner-size) * 0.48
-        );
-
-}
-
-
-.ornate-frame--main > .frame-line.left,
-.ornate-frame--main > .frame-line.right {
-
-    width: var(--main-frame-width);
-
-    top:
-        calc(
-            var(--main-corner-size) * 0.48
-        );
-
-    bottom:
-        calc(
-            var(--main-corner-size) * 0.48
-        );
-
-}
-
-
-/* =========================================================
-   INNER FRAME LINES
-   ========================================================= */
-
-.ornate-frame--inner > .frame-line.top,
-.ornate-frame--inner > .frame-line.bottom {
-
-    height: var(--inner-frame-width);
-
-    left:
-        calc(
-            var(--inner-corner-size) * 0.48
-        );
-
-    right:
-        calc(
-            var(--inner-corner-size) * 0.48
-        );
-
-}
-
-
-.ornate-frame--inner > .frame-line.left,
-.ornate-frame--inner > .frame-line.right {
-
-    width: var(--inner-frame-width);
-
-    top:
-        calc(
-            var(--inner-corner-size) * 0.48
-        );
-
-    bottom:
-        calc(
-            var(--inner-corner-size) * 0.48
-        );
-
-}
-
-
-/* =========================================================
-   LINE POSITIONS
-   ========================================================= */
-
-.top {
-    top: 0;
-}
-
-
-.bottom {
-    bottom: 0;
-}
-
-
-.left {
-    left: 0;
-}
-
-
-.right {
-    right: 0;
 }
 
 
@@ -717,40 +415,34 @@ h3 {
 @media
 (min-width: 700px) {
 
-    :root {
-
-        --main-corner-size: 76px;
-
-        --inner-corner-size: 48px;
-
-    }
-
-
     .page-shell {
 
-        padding: 24px;
+        padding: 18px;
 
     }
 
 
-    .hero {
+    .intro-page {
 
         padding:
 
-            94px
-            64px
-            48px;
+            68px
+            50px
+            46px;
 
     }
 
 
-    .index-card {
+    .brand-logo {
 
-        padding:
+        width: 190px;
 
-            40px
-            54px
-            34px;
+    }
+
+
+    .language-index {
+
+        max-width: 630px;
 
     }
 
@@ -759,9 +451,9 @@ h3 {
 
         padding:
 
-            58px
-            64px
-            82px;
+            48px
+            48px
+            70px;
 
     }
 
@@ -775,11 +467,9 @@ h3 {
 @media
 (min-width: 1100px) {
 
-    :root {
+    .page-shell {
 
-        --main-corner-size: 86px;
-
-        --inner-corner-size: 52px;
+        max-width: 900px;
 
     }
 
@@ -801,8 +491,6 @@ h3 {
 
     .page-shell {
 
-        width: 100%;
-
         max-width: none;
 
         padding: 0;
@@ -810,8 +498,7 @@ h3 {
     }
 
 
-    .ornate-frame--main,
-    .language-section {
+    .page-frame {
 
         box-shadow: none;
 
