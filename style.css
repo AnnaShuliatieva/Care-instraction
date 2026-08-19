@@ -1,30 +1,39 @@
 /* =========================================================
-   BASE — MOBILE FIRST
+   CARE INSTRUCTIONS
+   MOBILE FIRST
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
    ========================================================= */
 
 :root {
 
-    /* почти белая слоновая кость */
+    /* page colours */
     --background: #f8f8f6;
     --paper: #fffefa;
 
-    /* графит */
+    /* typography */
     --text: #343638;
-    --heading: #25282a;
-    --muted: #666b6f;
+    --heading: #26282a;
+    --muted: #676b6f;
 
-    /* сталь / серебро */
-    --steel-dark: #34383b;
-    --steel-mid-dark: #666d72;
-    --steel-mid: #969da2;
-    --steel-light: #e1e4e6;
+    /* steel frame */
+    --steel-dark: #35383b;
+    --steel-medium: #7b8084;
+    --steel-light: #d9dcde;
 
-    --page-max-width: 860px;
+    /* layout */
+    --page-width: 900px;
+    --content-width: 720px;
 
-    --frame-width: 3px;
+    /* frame */
+    --frame-width: 2px;
 
+    /* shadow */
     --page-shadow:
-        0 12px 34px rgba(31, 34, 36, 0.10);
+        0 14px 34px rgba(30, 33, 35, 0.09);
 }
 
 
@@ -36,14 +45,18 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
+
     margin: 0;
 
     background: var(--background);
+
     color: var(--text);
 
     font-family:
@@ -53,6 +66,7 @@ body {
         serif;
 
     font-size: 16px;
+
     line-height: 1.55;
 }
 
@@ -62,40 +76,62 @@ body {
    ========================================================= */
 
 a {
+
     color: inherit;
+
     text-decoration: none;
 }
 
+
 a:hover,
 a:focus {
+
     color: #111;
 }
 
 
 /* =========================================================
-   WHOLE SITE
+   SITE WIDTH
    ========================================================= */
 
 .page-shell {
+
     width: 100%;
-    max-width: var(--page-max-width);
+
+    max-width: var(--page-width);
 
     margin: 0 auto;
 
-    padding: 10px;
+    padding: 8px;
 }
 
 
 /* =========================================================
-   PAGE DESIGN
+   OLD SVG CORNERS
 
-   One identical rectangular steel frame:
-   - intro
+   These elements still exist in the current HTML,
+   but are intentionally not used in this version.
+   ========================================================= */
+
+.corner,
+.frame-line {
+
+    display: none;
+}
+
+
+/* =========================================================
+   COMMON PAGE FRAME
+
+   Used for:
+   - introduction page
    - English instruction
    - future Ukrainian instruction
    ========================================================= */
 
-.page-frame {
+.ornate-frame--main,
+.language-section {
+
     position: relative;
 
     width: 100%;
@@ -109,15 +145,19 @@ a:focus {
         linear-gradient(
             135deg,
             var(--steel-dark) 0%,
-            var(--steel-mid-dark) 18%,
-            var(--steel-light) 48%,
-            var(--steel-mid) 68%,
+            var(--steel-medium) 28%,
+            var(--steel-light) 50%,
+            var(--steel-medium) 72%,
             var(--steel-dark) 100%
         ) border-box;
 
-    border: var(--frame-width) solid transparent;
+    border:
+        var(--frame-width)
+        solid
+        transparent;
 
-    box-shadow: var(--page-shadow);
+    box-shadow:
+        var(--page-shadow);
 }
 
 
@@ -125,13 +165,26 @@ a:focus {
    FIRST PAGE
    ========================================================= */
 
-.intro-page {
+.ornate-frame--main {
+
     padding:
-        34px
-        20px
+        36px
+        18px
         34px;
 
     text-align: center;
+}
+
+
+/* Main content block */
+
+.ornate-frame--main > .frame-content {
+
+    width: 100%;
+
+    max-width: var(--content-width);
+
+    margin: 0 auto;
 }
 
 
@@ -140,71 +193,114 @@ a:focus {
    ========================================================= */
 
 .brand-logo {
+
     display: block;
 
-    width: 155px;
-    max-width: 46vw;
+    width: 165px;
+
+    max-width: 45vw;
+
     height: auto;
 
     margin:
         0 auto
-        22px;
+        24px;
 }
 
 
 /* =========================================================
-   MAIN TITLE
+   HEADINGS
    ========================================================= */
 
 h1,
 h2,
 h3 {
+
     color: var(--heading);
-}
-
-h1 {
-    margin:
-        0
-        0
-        0.16em;
-
-    font-size:
-        clamp(
-            2.25rem,
-            10vw,
-            4.25rem
-        );
-
-    line-height: 1.05;
 
     font-weight: 600;
 }
 
-.kicker {
+
+h1 {
+
     margin:
         0
         0
-        1.8rem;
+        0.15em;
+
+    font-size:
+        clamp(
+            2.25rem,
+            9vw,
+            4.2rem
+        );
+
+    line-height: 1.04;
+}
+
+
+h2 {
+
+    margin:
+        1.35rem
+        0
+        0.75rem;
+
+    font-size:
+        clamp(
+            1.35rem,
+            5vw,
+            1.9rem
+        );
+
+    line-height: 1.2;
+}
+
+
+h3 {
+
+    margin:
+        1.2rem
+        0
+        0.7rem;
+
+    font-size: 1.15rem;
+}
+
+
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+.kicker {
+
+    margin:
+        0
+        0
+        1.9rem;
 
     color: var(--muted);
 
-    font-size: 0.82rem;
+    font-size: 0.78rem;
 
     letter-spacing: 0.18em;
 }
 
 
 /* =========================================================
-   INTRODUCTORY TEXT
+   LEAD TEXT
    ========================================================= */
 
 .lead {
+
     width: 100%;
-    max-width: 650px;
+
+    max-width: 640px;
 
     margin:
         0 auto
-        2rem;
+        2.1rem;
 
     font-size: 1rem;
 }
@@ -215,29 +311,25 @@ h1 {
    ========================================================= */
 
 .welcome {
+
     width: 100%;
-    max-width: 700px;
+
+    max-width: 690px;
 
     margin:
         0 auto
-        2.2rem;
+        2.35rem;
 }
+
 
 .welcome h2 {
-    margin:
-        0
-        0
-        1rem;
 
-    font-size:
-        clamp(
-            1.45rem,
-            6vw,
-            2rem
-        );
+    margin-top: 0;
 }
 
+
 .welcome p {
+
     margin:
         0
         0
@@ -246,128 +338,117 @@ h1 {
 
 
 /* =========================================================
-   ENGLISH + UKRAINIAN CONTENTS
-
-   NO FRAMES HERE
+   LANGUAGE CONTENTS
    ========================================================= */
 
 .language-index {
+
     width: 100%;
-    max-width: 650px;
+
+    max-width: 620px;
 
     margin:
-        2.3rem auto
+        2.5rem auto
         0;
 
     text-align: left;
 }
 
 
-/* explicitly kill any old decorative-frame rules */
+/* The old ornate-frame classes remain in HTML,
+   but here these blocks are intentionally plain. */
 
 .language-index .ornate-frame,
-.language-index .ornate-frame--inner,
-.index-block {
-    border: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
+.language-index .ornate-frame--inner {
+
+    position: static;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    box-shadow: none;
 }
 
 
-/* If old corner SVG markup is still present,
-   do not show it. */
-
-.language-index .corner,
-.language-index .frame-line {
-    display: none !important;
-}
-
-
-.index-block,
-.index-card {
-    padding: 0 6px;
-}
-
-
-.index-block + .index-block,
 .language-index .ornate-frame + .ornate-frame {
-    margin-top: 2rem;
+
+    margin-top: 2.2rem;
 }
 
 
-.index-block h3,
+/* =========================================================
+   CONTENTS BLOCK
+   ========================================================= */
+
+.index-card {
+
+    padding: 0;
+}
+
+
 .index-card h3 {
+
     margin:
         0
         0
         0.8rem;
 
-    text-align: center;
+    text-align: left;
 
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.15rem;
 }
 
 
-.index-block ul,
 .index-card ul {
+
     margin: 0;
 
-    padding-left: 1.35rem;
+    padding-left: 1.25rem;
 }
 
 
-.index-block li,
 .index-card li {
-    margin: 0.32rem 0;
+
+    margin:
+        0.32rem
+        0;
 }
 
 
 /* =========================================================
-   ENGLISH / UKRAINIAN INSTRUCTION PAGES
+   INSTRUCTION PAGE
    ========================================================= */
 
 .language-section {
+
     margin-top: 18px;
 
     padding:
-        30px
-        20px
-        44px;
+        34px
+        18px
+        48px;
+
+    text-align: left;
 }
 
 
-.language-section section {
+.language-section > section {
+
+    width: 100%;
+
     scroll-margin-top: 20px;
 }
 
 
-.language-section h2 {
-    margin:
-        1.45rem
-        0
-        0.7rem;
-
-    font-size:
-        clamp(
-            1.35rem,
-            5.5vw,
-            1.9rem
-        );
-
-    line-height: 1.2;
-}
-
-
-.language-section h3 {
-    margin:
-        1.4rem
-        0
-        0.65rem;
-}
-
-
 .language-section p {
+
     margin:
         0
         0
@@ -376,51 +457,101 @@ h1 {
 
 
 /* =========================================================
-   LISTS
-
-   Do not flatten nested lists.
+   INSTRUCTION LISTS
    ========================================================= */
 
 .language-section ul,
 .language-section ol {
+
     margin:
-        0.8rem
+        0.75rem
         0
-        1.2rem;
+        1.15rem;
 
     padding-left: 1.45rem;
 }
 
 
 .language-section li {
+
     margin:
-        0.4rem
+        0.38rem
         0;
 }
 
 
+/* Nested lists remain visibly nested */
+
 .language-section ul ul,
-.language-section ol ul,
 .language-section ul ol,
+.language-section ol ul,
 .language-section ol ol {
+
     margin:
-        0.45rem
+        0.4rem
         0
-        0.6rem;
+        0.55rem;
 
     padding-left: 1.35rem;
 }
 
 
 /* =========================================================
-   FUTURE UKRAINIAN PAGE
-
-   Keep the framed page visible even while empty
+   EMPTY UKRAINIAN PAGE
    ========================================================= */
 
-.ukrainian-placeholder,
 .language-section--placeholder {
+
     min-height: 420px;
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    :root {
+
+        --frame-width: 1.5px;
+    }
+
+
+    .page-shell {
+
+        padding: 5px;
+    }
+
+
+    .ornate-frame--main {
+
+        padding:
+            28px
+            14px
+            28px;
+    }
+
+
+    .brand-logo {
+
+        width: 145px;
+    }
+
+
+    .language-section {
+
+        padding:
+            28px
+            14px
+            40px;
+    }
+
+
+    .index-card ul {
+
+        padding-left: 1.1rem;
+    }
 }
 
 
@@ -431,33 +562,35 @@ h1 {
 @media (min-width: 600px) {
 
     .page-shell {
-        padding: 16px;
+
+        padding: 14px;
     }
 
 
-    .intro-page {
+    .ornate-frame--main {
+
         padding:
             48px
-            44px
-            44px;
+            40px
+            42px;
     }
 
 
     .brand-logo {
-        width: 185px;
-        max-width: none;
 
-        margin-bottom: 25px;
+        width: 190px;
+
+        max-width: none;
     }
 
 
     .language-section {
-        padding:
-            42px
-            44px
-            60px;
-    }
 
+        padding:
+            44px
+            42px
+            62px;
+    }
 }
 
 
@@ -468,89 +601,36 @@ h1 {
 @media (min-width: 900px) {
 
     .page-shell {
-        max-width: 900px;
 
         padding:
-            20px
-            20px
-            34px;
+            18px
+            18px
+            32px;
     }
 
 
-    .intro-page {
+    .ornate-frame--main {
+
         padding:
-            58px
-            64px
+            56px
+            62px
             50px;
     }
 
 
     .brand-logo {
-        width: 205px;
-    }
 
-
-    .lead {
-        max-width: 620px;
-    }
-
-
-    .welcome {
-        max-width: 690px;
-    }
-
-
-    .language-index {
-        max-width: 610px;
+        width: 215px;
     }
 
 
     .language-section {
+
         padding:
             52px
-            62px
+            60px
             72px;
     }
-
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    :root {
-        --frame-width: 2px;
-    }
-
-
-    .page-shell {
-        padding: 6px;
-    }
-
-
-    .intro-page {
-        padding:
-            28px
-            15px
-            30px;
-    }
-
-
-    .brand-logo {
-        width: 135px;
-    }
-
-
-    .language-section {
-        padding:
-            26px
-            15px
-            38px;
-    }
-
 }
 
 
@@ -561,18 +641,24 @@ h1 {
 @media print {
 
     body {
+
         background: white;
     }
 
 
     .page-shell {
+
+        width: 100%;
+
         max-width: none;
+
         padding: 0;
     }
 
 
-    .page-frame {
+    .ornate-frame--main,
+    .language-section {
+
         box-shadow: none;
     }
-
 }
