@@ -1,27 +1,30 @@
 /* =========================================================
-   MOBILE FIRST
+   BASE — MOBILE FIRST
    ========================================================= */
 
 :root {
 
-    --background: #fbfbfa;
+    /* почти белая слоновая кость */
+    --background: #f8f8f6;
     --paper: #fffefa;
 
-    --text: #303234;
-    --heading: #26282a;
-    --muted: #686c70;
+    /* графит */
+    --text: #343638;
+    --heading: #25282a;
+    --muted: #666b6f;
 
-    --steel-dark: #35383b;
-    --steel-medium: #777c80;
-    --steel-light: #d6d9db;
-
-    --frame-width: 2px;
+    /* сталь / серебро */
+    --steel-dark: #34383b;
+    --steel-mid-dark: #666d72;
+    --steel-mid: #969da2;
+    --steel-light: #e1e4e6;
 
     --page-max-width: 860px;
 
-    --page-shadow:
-        0 12px 32px rgba(30, 32, 34, 0.08);
+    --frame-width: 3px;
 
+    --page-shadow:
+        0 12px 34px rgba(31, 34, 36, 0.10);
 }
 
 
@@ -33,18 +36,14 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
     margin: 0;
 
     background: var(--background);
-
     color: var(--text);
 
     font-family:
@@ -53,8 +52,8 @@ body {
         "Times New Roman",
         serif;
 
+    font-size: 16px;
     line-height: 1.55;
-
 }
 
 
@@ -63,53 +62,62 @@ body {
    ========================================================= */
 
 a {
-
     color: inherit;
-
     text-decoration: none;
-
 }
-
 
 a:hover,
 a:focus {
-
     color: #111;
-
 }
 
 
 /* =========================================================
-   GENERAL PAGE
+   WHOLE SITE
    ========================================================= */
 
 .page-shell {
-
     width: 100%;
-
     max-width: var(--page-max-width);
 
     margin: 0 auto;
 
-    padding: 8px;
-
+    padding: 10px;
 }
 
 
 /* =========================================================
-   SIMPLE RECTANGULAR FRAME
+   PAGE DESIGN
+
+   One identical rectangular steel frame:
+   - intro
+   - English instruction
+   - future Ukrainian instruction
    ========================================================= */
 
 .page-frame {
-
     position: relative;
 
-    background: var(--paper);
+    width: 100%;
 
-    border: var(--frame-width) solid var(--steel-medium);
+    background:
+        linear-gradient(
+            var(--paper),
+            var(--paper)
+        ) padding-box,
+
+        linear-gradient(
+            135deg,
+            var(--steel-dark) 0%,
+            var(--steel-mid-dark) 18%,
+            var(--steel-light) 48%,
+            var(--steel-mid) 68%,
+            var(--steel-dark) 100%
+        ) border-box;
+
+    border: var(--frame-width) solid transparent;
 
     box-shadow: var(--page-shadow);
-
 }
 
 
@@ -118,15 +126,12 @@ a:focus {
    ========================================================= */
 
 .intro-page {
-
     padding:
-
-        44px
+        34px
         20px
         34px;
 
     text-align: center;
-
 }
 
 
@@ -135,110 +140,73 @@ a:focus {
    ========================================================= */
 
 .brand-logo {
-
     display: block;
 
-    width: min(
-        38vw,
-        180px
-    );
-
+    width: 155px;
+    max-width: 46vw;
     height: auto;
 
     margin:
-
         0 auto
         22px;
-
 }
 
 
 /* =========================================================
-   TYPOGRAPHY
+   MAIN TITLE
    ========================================================= */
 
 h1,
 h2,
 h3 {
-
     color: var(--heading);
-
-    font-weight: 600;
-
 }
-
 
 h1 {
-
     margin:
-
-        0.2em
         0
-        0.18em;
+        0
+        0.16em;
 
     font-size:
-
         clamp(
-            2.1rem,
-            9vw,
-            4.1rem
+            2.25rem,
+            10vw,
+            4.25rem
         );
 
-    line-height: 1.04;
+    line-height: 1.05;
 
+    font-weight: 600;
 }
-
-
-h2 {
-
-    margin:
-
-        1.25em
-        0
-        0.55em;
-
-    font-size:
-
-        clamp(
-            1.3rem,
-            5vw,
-            1.9rem
-        );
-
-}
-
-
-h3 {
-
-    font-size: 1.15rem;
-
-}
-
 
 .kicker {
-
     margin:
-
         0
         0
-        2rem;
+        1.8rem;
 
     color: var(--muted);
 
-    letter-spacing: 0.16em;
+    font-size: 0.82rem;
 
+    letter-spacing: 0.18em;
 }
 
 
-.lead {
+/* =========================================================
+   INTRODUCTORY TEXT
+   ========================================================= */
 
+.lead {
+    width: 100%;
     max-width: 650px;
 
     margin:
-
         0 auto
-        2.2rem;
+        2rem;
 
+    font-size: 1rem;
 }
 
 
@@ -247,230 +215,340 @@ h3 {
    ========================================================= */
 
 .welcome {
-
-    max-width: 720px;
+    width: 100%;
+    max-width: 700px;
 
     margin:
-
         0 auto
         2.2rem;
-
 }
 
+.welcome h2 {
+    margin:
+        0
+        0
+        1rem;
+
+    font-size:
+        clamp(
+            1.45rem,
+            6vw,
+            2rem
+        );
+}
 
 .welcome p {
-
     margin:
-
         0
         0
-        1.05rem;
-
+        1rem;
 }
 
 
 /* =========================================================
-   LANGUAGE CONTENTS
-   NO FRAMES
+   ENGLISH + UKRAINIAN CONTENTS
+
+   NO FRAMES HERE
    ========================================================= */
 
 .language-index {
-
     width: 100%;
-
-    max-width: 680px;
+    max-width: 650px;
 
     margin:
-
-        2.4rem auto
+        2.3rem auto
         0;
 
     text-align: left;
-
 }
 
 
+/* explicitly kill any old decorative-frame rules */
+
+.language-index .ornate-frame,
+.language-index .ornate-frame--inner,
 .index-block {
-
-    padding:
-
-        0
-        8px;
-
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 
-.index-block + .index-block {
+/* If old corner SVG markup is still present,
+   do not show it. */
 
-    margin-top: 2.25rem;
-
+.language-index .corner,
+.language-index .frame-line {
+    display: none !important;
 }
 
 
-.index-block h3 {
+.index-block,
+.index-card {
+    padding: 0 6px;
+}
 
+
+.index-block + .index-block,
+.language-index .ornate-frame + .ornate-frame {
+    margin-top: 2rem;
+}
+
+
+.index-block h3,
+.index-card h3 {
     margin:
-
         0
         0
-        0.9rem;
+        0.8rem;
 
     text-align: center;
 
-    font-size: 1.25rem;
-
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 
-.index-block ul {
-
+.index-block ul,
+.index-card ul {
     margin: 0;
 
     padding-left: 1.35rem;
-
 }
 
 
-.index-block li {
-
-    margin:
-
-        0.35rem
-        0;
-
+.index-block li,
+.index-card li {
+    margin: 0.32rem 0;
 }
 
 
 /* =========================================================
-   INSTRUCTION PAGES
+   ENGLISH / UKRAINIAN INSTRUCTION PAGES
    ========================================================= */
 
 .language-section {
-
     margin-top: 18px;
 
     padding:
-
-        34px
+        30px
         20px
-        52px;
-
+        44px;
 }
 
 
 .language-section section {
-
     scroll-margin-top: 20px;
-
 }
 
 
 .language-section h2 {
+    margin:
+        1.45rem
+        0
+        0.7rem;
 
-    margin-top: 1.6rem;
+    font-size:
+        clamp(
+            1.35rem,
+            5.5vw,
+            1.9rem
+        );
 
+    line-height: 1.2;
 }
 
+
+.language-section h3 {
+    margin:
+        1.4rem
+        0
+        0.65rem;
+}
+
+
+.language-section p {
+    margin:
+        0
+        0
+        1rem;
+}
+
+
+/* =========================================================
+   LISTS
+
+   Do not flatten nested lists.
+   ========================================================= */
 
 .language-section ul,
 .language-section ol {
+    margin:
+        0.8rem
+        0
+        1.2rem;
 
-    padding-left: 1.4rem;
-
-}
-
-
-.language-section ul ul {
-
-    margin-top: 0.35rem;
-
+    padding-left: 1.45rem;
 }
 
 
 .language-section li {
-
     margin:
-
-        0.42rem
+        0.4rem
         0;
+}
 
+
+.language-section ul ul,
+.language-section ol ul,
+.language-section ul ol,
+.language-section ol ol {
+    margin:
+        0.45rem
+        0
+        0.6rem;
+
+    padding-left: 1.35rem;
 }
 
 
 /* =========================================================
-   UKRAINIAN PLACEHOLDER
+   FUTURE UKRAINIAN PAGE
+
+   Keep the framed page visible even while empty
    ========================================================= */
 
-.ukrainian-placeholder {
-
-    min-height: 360px;
-
+.ukrainian-placeholder,
+.language-section--placeholder {
+    min-height: 420px;
 }
 
 
 /* =========================================================
-   TABLET / DESKTOP
+   TABLET
    ========================================================= */
 
-@media
-(min-width: 700px) {
+@media (min-width: 600px) {
 
     .page-shell {
-
-        padding: 18px;
-
+        padding: 16px;
     }
 
 
     .intro-page {
-
         padding:
-
-            68px
-            50px
-            46px;
-
+            48px
+            44px
+            44px;
     }
 
 
     .brand-logo {
+        width: 185px;
+        max-width: none;
 
-        width: 190px;
-
-    }
-
-
-    .language-index {
-
-        max-width: 630px;
-
+        margin-bottom: 25px;
     }
 
 
     .language-section {
-
         padding:
-
-            48px
-            48px
-            70px;
-
+            42px
+            44px
+            60px;
     }
 
 }
 
 
 /* =========================================================
-   LARGE DESKTOP
+   DESKTOP
    ========================================================= */
 
-@media
-(min-width: 1100px) {
+@media (min-width: 900px) {
 
     .page-shell {
-
         max-width: 900px;
 
+        padding:
+            20px
+            20px
+            34px;
+    }
+
+
+    .intro-page {
+        padding:
+            58px
+            64px
+            50px;
+    }
+
+
+    .brand-logo {
+        width: 205px;
+    }
+
+
+    .lead {
+        max-width: 620px;
+    }
+
+
+    .welcome {
+        max-width: 690px;
+    }
+
+
+    .language-index {
+        max-width: 610px;
+    }
+
+
+    .language-section {
+        padding:
+            52px
+            62px
+            72px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    :root {
+        --frame-width: 2px;
+    }
+
+
+    .page-shell {
+        padding: 6px;
+    }
+
+
+    .intro-page {
+        padding:
+            28px
+            15px
+            30px;
+    }
+
+
+    .brand-logo {
+        width: 135px;
+    }
+
+
+    .language-section {
+        padding:
+            26px
+            15px
+            38px;
     }
 
 }
@@ -483,25 +561,18 @@ h3 {
 @media print {
 
     body {
-
         background: white;
-
     }
 
 
     .page-shell {
-
         max-width: none;
-
         padding: 0;
-
     }
 
 
     .page-frame {
-
         box-shadow: none;
-
     }
 
 }
