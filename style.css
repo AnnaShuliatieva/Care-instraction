@@ -1,46 +1,139 @@
 /* =========================================================
-   TEMPORARY SIMPLE FRAMES
-   WORKS WITH CURRENT HTML
+   CARE INSTRUCTIONS
+   MOBILE FIRST
    ========================================================= */
 
-/* Убираем все старые SVG-углы и составные линии рамок */
+:root {
+    --background: #f7f7f5;
+    --paper: #fffefa;
+
+    --text: #343638;
+    --heading: #26282a;
+    --muted: #676b6f;
+
+    --steel-dark: #35383b;
+    --steel-medium: #7d8286;
+    --steel-light: #d8dbdd;
+
+    --page-max-width: 900px;
+    --content-max-width: 700px;
+
+    --frame-width: 2px;
+
+    --page-shadow:
+        0 12px 30px rgba(30, 33, 35, 0.09);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: var(--background);
+    color: var(--text);
+
+    font-family:
+        Cambria,
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #111;
+}
+
+
+/* =========================================================
+   MAIN SITE CONTAINER
+   ========================================================= */
+
+.page-shell {
+    width: 100%;
+    max-width: var(--page-max-width);
+
+    margin: 0 auto;
+
+    padding: 14px;
+}
+
+
+/* =========================================================
+   REMOVE OLD SVG FRAME ELEMENTS
+   ========================================================= */
+
 .corner,
 .frame-line {
     display: none !important;
 }
 
 
-/* Одинаковая стальная рамка:
-   1. первая страница
-   2. английская инструкция
-   3. будущая украинская инструкция
-*/
+/* =========================================================
+   COMMON PAGE STYLE
+
+   Used by:
+   - first page
+   - English instruction
+   - Ukrainian instruction
+   ========================================================= */
+
 .ornate-frame--main,
 .language-section {
+    position: relative;
 
     width: 100%;
 
-    position: relative;
+    margin:
+        0 auto
+        22px;
 
     background:
         linear-gradient(
-            #fffefa,
-            #fffefa
+            var(--paper),
+            var(--paper)
         ) padding-box,
 
         linear-gradient(
             135deg,
-            #35383b 0%,
-            #6d7276 22%,
-            #d9dcde 48%,
-            #8b9094 70%,
-            #35383b 100%
+            var(--steel-dark) 0%,
+            var(--steel-medium) 28%,
+            var(--steel-light) 50%,
+            var(--steel-medium) 72%,
+            var(--steel-dark) 100%
         ) border-box;
 
-    border: 3px solid transparent;
+    border:
+        var(--frame-width)
+        solid
+        transparent;
 
     box-shadow:
-        0 12px 34px rgba(31, 34, 36, 0.10);
+        var(--page-shadow);
 }
 
 
@@ -49,111 +142,291 @@
    ========================================================= */
 
 .ornate-frame--main {
-
     padding:
         42px
         24px
         38px;
 
+    text-align: center;
 }
 
 
-/* Контент первой страницы не должен получать
-   дополнительную огромную внутреннюю ширину */
+/* current HTML already has .frame-content */
 .ornate-frame--main > .frame-content {
-
     width: 100%;
-
-    max-width: 720px;
+    max-width: var(--content-max-width);
 
     margin: 0 auto;
-
 }
 
 
-/* Логотип крупнее */
+/* =========================================================
+   LOGO
+   ========================================================= */
+
 .brand-logo {
+    display: block;
 
-    width: 180px !important;
-
-    max-width: 48vw !important;
-
+    width: 190px;
+    max-width: 50vw;
     height: auto;
 
     margin:
         0 auto
-        24px !important;
+        24px;
 }
 
 
 /* =========================================================
-   CONTENTS — НИКАКИХ РАМОК
+   HEADINGS
    ========================================================= */
 
-.language-index .ornate-frame,
-.language-index .ornate-frame--inner {
+h1,
+h2,
+h3 {
+    color: var(--heading);
+    font-weight: 600;
+}
 
-    border: none !important;
+h1 {
+    margin:
+        0
+        0
+        0.18em;
 
-    background: transparent !important;
+    font-size:
+        clamp(
+            2.15rem,
+            8vw,
+            3.8rem
+        );
 
-    box-shadow: none !important;
+    line-height: 1.05;
+}
 
-    padding: 0 !important;
+h2 {
+    margin:
+        1.35rem
+        0
+        0.7rem;
 
+    font-size:
+        clamp(
+            1.35rem,
+            5vw,
+            1.9rem
+        );
+
+    line-height: 1.2;
+}
+
+h3 {
+    margin:
+        1.2rem
+        0
+        0.7rem;
+
+    font-size: 1.15rem;
 }
 
 
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+.kicker {
+    margin:
+        0
+        0
+        1.8rem;
+
+    color: var(--muted);
+
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+}
+
+
+/* =========================================================
+   INTRO TEXT
+   ========================================================= */
+
+.lead {
+    width: 100%;
+    max-width: 620px;
+
+    margin:
+        0 auto
+        2rem;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.welcome {
+    width: 100%;
+    max-width: 680px;
+
+    margin:
+        0 auto
+        2.3rem;
+}
+
+.welcome h2 {
+    margin-top: 0;
+}
+
+.welcome p {
+    margin:
+        0
+        0
+        1rem;
+}
+
+
+/* =========================================================
+   LANGUAGE CONTENTS
+   NO FRAMES
+   ========================================================= */
+
 .language-index {
+    width: 100%;
+    max-width: 620px;
+
+    margin:
+        2.3rem auto
+        0;
+
+    text-align: left;
+}
+
+
+/* kill old inner frame styling */
+.language-index .ornate-frame,
+.language-index .ornate-frame--inner {
+    position: static;
 
     width: 100%;
 
-    max-width: 640px;
+    margin: 0;
+    padding: 0;
 
-    margin:
-        2.4rem auto
-        0;
-
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 
-.language-index .index-card {
-
-    padding:
-        0
-        8px !important;
-
-}
-
-
+/* space between English and Ukrainian contents */
 .language-index .ornate-frame + .ornate-frame {
-
-    margin-top: 2.2rem;
-
+    margin-top: 2.1rem;
 }
 
 
 /* =========================================================
-   ENGLISH + FUTURE UKRAINIAN PAGE
+   CONTENTS CARDS
    ========================================================= */
 
-.language-section {
+.index-card {
+    padding: 0;
+}
 
-    margin-top: 20px;
+.index-card h3 {
+    margin:
+        0
+        0
+        0.8rem;
 
-    padding:
-        38px
-        26px
-        54px;
+    text-align: left;
 
+    font-size: 1.15rem;
+}
+
+.index-card ul {
+    margin: 0;
+
+    padding-left: 1.25rem;
+}
+
+.index-card li {
+    margin:
+        0.32rem
+        0;
 }
 
 
-/* Пустая украинская страница остаётся видимой */
+/* =========================================================
+   INSTRUCTION PAGES
+   ========================================================= */
+
+.language-section {
+    padding:
+        42px
+        28px
+        58px;
+
+    text-align: left;
+}
+
+.language-section > section {
+    width: 100%;
+
+    scroll-margin-top: 20px;
+}
+
+.language-section p {
+    margin:
+        0
+        0
+        1rem;
+}
+
+
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+.language-section ul,
+.language-section ol {
+    margin:
+        0.75rem
+        0
+        1.15rem;
+
+    padding-left: 1.45rem;
+}
+
+.language-section li {
+    margin:
+        0.38rem
+        0;
+}
+
+
+/* nested lists stay visibly nested */
+.language-section ul ul,
+.language-section ul ol,
+.language-section ol ul,
+.language-section ol ol {
+    margin:
+        0.4rem
+        0
+        0.55rem;
+
+    padding-left: 1.4rem;
+}
+
+
+/* =========================================================
+   UKRAINIAN EMPTY PAGE
+   ========================================================= */
+
 .language-section--placeholder {
-
     min-height: 420px;
-
 }
 
 
@@ -163,39 +436,84 @@
 
 @media (max-width: 599px) {
 
+    :root {
+        --frame-width: 1.5px;
+    }
+
+
     .page-shell {
+        padding:
+            10px
+            10px
+            18px;
+    }
 
-        width: 100%;
 
-        padding: 6px;
-
+    .ornate-frame--main,
+    .language-section {
+        margin-bottom: 16px;
     }
 
 
     .ornate-frame--main {
-
-        padding:
-            32px
-            16px
-            30px;
-
-    }
-
-
-    .language-section {
-
         padding:
             30px
-            16px
-            44px;
-
+            18px
+            30px;
     }
 
 
     .brand-logo {
+        width: 165px;
+        max-width: 52vw;
+    }
 
-        width: 150px !important;
 
+    .language-section {
+        padding:
+            30px
+            18px
+            44px;
+    }
+
+
+    .index-card ul {
+        padding-left: 1.15rem;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 600px) {
+
+    .page-shell {
+        padding: 16px;
+    }
+
+
+    .ornate-frame--main {
+        padding:
+            48px
+            42px
+            42px;
+    }
+
+
+    .brand-logo {
+        width: 205px;
+        max-width: none;
+    }
+
+
+    .language-section {
+        padding:
+            46px
+            44px
+            62px;
     }
 
 }
@@ -205,45 +523,60 @@
    DESKTOP
    ========================================================= */
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
 
     .page-shell {
-
-        width: 100%;
-
-        max-width: 900px;
-
-        padding: 18px;
-
+        padding:
+            18px
+            18px
+            34px;
     }
 
 
     .ornate-frame--main {
-
         padding:
-            54px
             56px
-            46px;
-
+            60px
+            48px;
     }
 
 
     .brand-logo {
-
-        width: 205px !important;
-
-        max-width: none !important;
-
+        width: 220px;
     }
 
 
     .language-section {
-
         padding:
-            50px
-            56px
-            70px;
+            52px
+            58px
+            72px;
+    }
 
+}
+
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+
+    .page-shell {
+        max-width: none;
+
+        padding: 0;
+    }
+
+
+    .ornate-frame--main,
+    .language-section {
+        box-shadow: none;
     }
 
 }
