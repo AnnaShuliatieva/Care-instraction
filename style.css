@@ -149,16 +149,6 @@ a:focus {
 }
 
 
-/* The current HTML contains .frame-content */
-.ornate-frame--main > .frame-content {
-    width: 100%;
-
-    max-width: 700px;
-
-    margin: 0 auto;
-}
-
-
 /* =========================================================
    LOGO
    ========================================================= */
@@ -166,14 +156,14 @@ a:focus {
 .brand-logo {
     display: block;
 
-    width: 200px;
+    width: 300px;
     max-width: 48vw;
 
     height: auto;
 
     margin:
         0 auto
-        26px;
+        18px;
 }
 
 
@@ -308,58 +298,7 @@ h3 {
 /* These classes still exist in the current HTML,
    but inside the contents they must have no frame. */
 
-.language-index .ornate-frame,
-.language-index .ornate-frame--inner {
-    position: static;
-
-    width: 100%;
-
-    margin: 0;
-    padding: 0;
-
-    border: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-}
-
-
 /* Space between the two language contents blocks */
-
-.language-index .ornate-frame + .ornate-frame {
-    margin-top: 2rem;
-}
-
-
-.index-card {
-    padding: 0;
-}
-
-
-.index-card h3 {
-    margin:
-        0
-        0
-        0.8rem;
-
-    text-align: left;
-
-    font-size: 1.15rem;
-}
-
-
-.index-card ul {
-    margin: 0;
-
-    padding-left: 1.3rem;
-}
-
-
-.index-card li {
-    margin:
-        0.32rem
-        0;
-}
-
 
 /* =========================================================
    ENGLISH / UKRAINIAN INSTRUCTION PAGES
@@ -431,7 +370,7 @@ h3 {
    EMPTY UKRAINIAN PAGE
    ========================================================= */
 
-.language-section--placeholder {
+.ukrainian-placeholder {
     min-height: 420px;
 }
 
@@ -481,12 +420,6 @@ h3 {
             20px
             46px;
     }
-
-
-    .index-card ul {
-        padding-left: 1.2rem;
-    }
-}
 
 
 /* =========================================================
