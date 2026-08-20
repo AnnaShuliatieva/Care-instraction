@@ -163,7 +163,7 @@ a:focus {
 
     margin:
         0 auto
-        18px;
+        10px;
 }
 
 
@@ -456,7 +456,7 @@ h3 {
 
     .ornate-frame--main {
         padding:
-            35px
+            15px
             60px
             48px;
     }
