@@ -156,7 +156,7 @@ a:focus {
 .brand-logo {
     display: block;
 
-    width: 300px;
+    width: 400px;
     max-width: 48vw;
 
     height: auto;
@@ -456,7 +456,7 @@ h3 {
 
     .ornate-frame--main {
         padding:
-            56px
+            35px
             60px
             48px;
     }
