@@ -480,6 +480,24 @@ h3 {
             20px
             46px;
     }
+
+       /* LIST INDENTS — MOBILE */
+
+    .list-level-1 {
+        padding-left: 1.15rem;
+    }
+
+    .list-level-2 {
+        padding-left: 1.35rem;
+    }
+
+    .list-level-3 {
+        padding-left: 1.55rem;
+    }
+
+    .list-numbered {
+        padding-left: 1.3rem;
+    }   
 }
 
 /* =========================================================
