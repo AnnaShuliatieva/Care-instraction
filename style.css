@@ -375,32 +375,40 @@ h3 {
         0;
 }
 
-/* First level — large black circle */
+/* Large black circle */
 
-.language-section ul > li::marker {
+.list-level-1 > li::marker {
     content: "●  ";
-    font-size: 0.85em;
-    color: var(--text);
+    font-size: 0.72em;
 }
 
 
-/* Second level — smaller black circle */
+/* Small black circle */
 
-.language-section ul ul > li::marker {
+.list-level-2 > li::marker {
     content: "●  ";
-    font-size: 0.58em;
-    color: var(--text);
+    font-size: 0.52em;
 }
 
 
-/* Third level — square, same size as second level */
+/* Small black square */
 
-.language-section ul ul ul > li::marker {
+.list-level-3 > li::marker {
     content: "■  ";
-    font-size: 0.58em;
-    color: var(--text);
+    font-size: 0.52em;
 }
 
+
+/* Numbered list: 1. 2. 3. */
+
+.list-numbered {
+    list-style-type: decimal;
+}
+
+.list-numbered > li::marker {
+    font-size: 1em;
+    font-weight: 600;
+}
 
 /* Nested levels remain visibly nested */
 
