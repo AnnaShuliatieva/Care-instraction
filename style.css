@@ -717,6 +717,41 @@ h3 {
     }
 }
 
+/* =========================================================
+   BACK TO TOP BUTTON
+   ========================================================= */
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--paper);
+    color: var(--steel-dark);
+
+    border: 1.5px solid var(--steel-mid);
+    border-radius: 50%;
+
+    box-shadow: 0 4px 14px rgba(30, 33, 35, 0.15);
+
+    font-size: 1.5rem;
+    line-height: 1;
+
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+    background: var(--steel-light);
+}
 
 /* =========================================================
    PRINT
