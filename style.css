@@ -562,14 +562,14 @@ h3 {
 /* 1-й уровень — большой круг */
 .language-section .list-level-1 {
     padding-left: 0;
+    list-style-type: disc;
     list-style-position: inside;
 }
 
 .language-section .list-level-1 > li::marker {
     content: normal;
-   font-size: 2em;
+    font-size: 1.4em;
 }
-
 
 /* 2-й уровень — маленький круг */
 .language-section .list-level-2 {
