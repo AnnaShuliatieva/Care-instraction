@@ -375,6 +375,32 @@ h3 {
         0;
 }
 
+/* First level — large black circle */
+
+.language-section ul > li::marker {
+    content: "●  ";
+    font-size: 0.85em;
+    color: var(--text);
+}
+
+
+/* Second level — smaller black circle */
+
+.language-section ul ul > li::marker {
+    content: "●  ";
+    font-size: 0.58em;
+    color: var(--text);
+}
+
+
+/* Third level — square, same size as second level */
+
+.language-section ul ul ul > li::marker {
+    content: "■  ";
+    font-size: 0.58em;
+    color: var(--text);
+}
+
 
 /* Nested levels remain visibly nested */
 
