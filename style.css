@@ -470,11 +470,12 @@ h3 {
 
     /* 2-й уровень — маленький круг */
 
-     .language-section .list-level-2 {
-        margin-left: 1rem;
-        padding-left: 2rem;
-        list-style-type: disc;
-        list-style-position: outside;
+    .language-section .list-level-2 {
+       margin-left: 5rem;
+       padding-left: 4rem;
+       list-style-type: disc;
+       list-style-position: outside;
+       
 }
 
     .language-section .list-level-2 > li::marker {
