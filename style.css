@@ -298,13 +298,26 @@ h3 {
 
 .language-index .index-block ul {
     margin: 0;
-    padding-left: 1.3rem;
+    padding-left: 0;
+    list-style: none;
 }
 
 .language-index .index-block li {
+    position: relative;
+
     margin:
         0.32rem
         0;
+
+    padding-left: 1.3rem;
+}
+
+.language-index .index-block li::before {
+    content: "•";
+
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .language-index .index-block h3 {
@@ -318,7 +331,7 @@ h3 {
 }
 
 .language-index a {
-    display: block;
+    display: inline-block;
 
     padding:
         4px
