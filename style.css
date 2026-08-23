@@ -566,30 +566,29 @@ h3 {
 }
 
 .language-section .list-level-1 > li::marker {
-    font-size: 1em;
-    line-height: 1;
+    content: normal;
 }
 
 
 /* 2-й уровень — маленький круг */
 .language-section .list-level-2 {
     padding-left: 0.75em;
+   list-style-type: disc;
 }
 
 .language-section .list-level-2 > li::marker {
-    font-size: 0.65em;
-    line-height: 1;
+    content: normal;
 }
 
 
 /* 3-й уровень — квадрат того же размера */
 .language-section .list-level-3 {
     padding-left: 1em;
+    list-style-type: square;
 }
 
 .language-section .list-level-3 > li::marker {
-    font-size: 0.5em;
-    line-height: 1;
+    content: normal;
 }
 
 
