@@ -293,6 +293,7 @@ h3 {
     text-align: left;
 }
 
+
 /* FIRST PAGE CONTENTS — independent from instruction lists */
 
 .language-index .index-block ul {
@@ -342,11 +343,6 @@ h3 {
 }
 
 
-/* These classes still exist in the current HTML,
-   but inside the contents they must have no frame. */
-
-/* Space between the two language contents blocks */
-
 /* =========================================================
    ENGLISH / UKRAINIAN INSTRUCTION PAGES
    ========================================================= */
@@ -377,7 +373,7 @@ h3 {
 
 
 /* =========================================================
-   LISTS
+   LISTS — COMMON
    ========================================================= */
 
 /* Общие вертикальные отступы всех списков */
@@ -399,56 +395,6 @@ h3 {
         0;
 }
 
-
-/* 1-й тип — большой чёрный круг */
-
-.list-level-1 {
-    padding-left: 0rem;
-   list-style-position: inside;
-}
-
-.list-level-1 > li::marker {
-    content: "●  ";
-    font-size: 0.5em;
-}
-
-
-/* 2-й тип — маленький чёрный круг */
-
-.list-level-2 {
-    padding-left: 1.4rem;
-}
-
-.list-level-2 > li::marker {
-    content: "●  ";
-    font-size: 0.35em;
-}
-
-
-/* 3-й тип — маленький чёрный квадрат */
-
-.list-level-3 {
-    padding-left: 2.15rem;
-}
-
-.list-level-3 > li::marker {
-    content: "■  ";
-    font-size: 0.35em;
-}
-
-
-/* 4-й тип — нумерация 1. 2. 3. */
-
-.list-numbered {
-    padding-left: 0rem;
-    list-style-type: decimal;
-   list-style-position: inside;
-}
-
-.list-numbered > li::marker {
-    font-size: 1.10em;
-    font-weight: 600;
-}
 
 /* =========================================================
    EMPTY UKRAINIAN PAGE
@@ -505,76 +451,93 @@ h3 {
             46px;
     }
 
-/* LISTS — MOBILE ONLY */
 
-/* 1-й уровень — большой круг */
-.language-section .list-level-1 {
-    padding-left: 0;
-    list-style-type: disc;
-    list-style-position: inside;
+    /* =====================================================
+       LISTS — MOBILE ONLY
+       ===================================================== */
+
+
+    /* 1-й уровень — большой круг */
+
+    .language-section .list-level-1 {
+        padding-left: 0;
+
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+
+    .language-section .list-level-1 > li::marker {
+        content: normal;
+        font-size: 1.1em;
+    }
+
+
+    /* 2-й уровень — маленький круг */
+
+    .language-section .list-level-2 {
+        padding-left: 0.85em;
+
+        list-style-type: disc;
+    }
+
+    .language-section .list-level-2 > li::marker {
+        content: normal;
+        font-size: 0.85em;
+    }
+
+
+    /* 3-й уровень — квадрат */
+
+    .language-section .list-level-3 {
+        padding-left: 1em;
+
+        list-style-type: square;
+    }
+
+    .language-section .list-level-3 > li::marker {
+        content: normal;
+        font-size: 0.8em;
+    }
+
+
+    /* 4-й тип — нумерация 1. 2. 3. */
+
+    .language-section .list-numbered {
+        padding-left: 1.35rem;
+
+        list-style-type: decimal;
+        list-style-position: outside;
+    }
+
+    .language-section .list-numbered > li::marker {
+        font-size: 1.05em;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+
+    /* Не даём первому абзацу нумерованного пункта
+       уводить цифру на отдельную строку */
+
+    .language-section .list-numbered > li > p:first-child {
+        display: inline;
+    }
+
+
+    /* Расстояние маркер → текст — MOBILE */
+
+    .language-section .list-level-1 > li,
+    .language-section .list-level-2 > li,
+    .language-section .list-level-3 > li {
+        padding-left: 8px;
+        text-indent: -6px;
+    }
+
 }
 
-.language-section .list-level-1 > li::marker {
-    content: normal;
-    font-size: 1.1em;
-}
-
-/* 2-й уровень — маленький круг */
-.language-section .list-level-2 {
-    padding-left: 0.85em;
-   list-style-type: disc;
-}
-
-.language-section .list-level-2 > li::marker {
-    content: normal;
-   font-size: 0.85em;
-}
-
-
-/* 3-й уровень — квадрат того же размера */
-.language-section .list-level-3 {
-    padding-left: 1em;
-    list-style-type: square;
-}
-
-.language-section .list-level-3 > li::marker {
-    content: normal;
-   font-size: 0.8em;
-}
-
-
-/* Нумерация 1. 2. 3. */
-.language-section .list-numbered {
-    padding-left: 1.35rem;
-    list-style-type: decimal;
-    list-style-position: outside;
-}
-
-.language-section .list-numbered > li::marker {
-    font-size: 1.05em;
-    font-weight: 600;
-    line-height: 1;
-}
-
-
-/* Не даём первому абзацу нумерованного пункта
-   уводить цифру на отдельную строку */
-.language-section .list-numbered > li > p:first-child {
-    display: inline;
-}
-
-
-/* Расстояние МАРКЕР → ТЕКСТ — MOBILE */
-.language-section .list-level-1 > li,
-.language-section .list-level-2 > li,
-.language-section .list-level-3 > li {
-    padding-left: 8px;
-    text-indent: -6px;
-}
-}
 
 /* =========================================================
-   TABLET
+   TABLET + DESKTOP LISTS
    ========================================================= */
 
 @media (min-width: 600px) {
@@ -588,6 +551,83 @@ h3 {
         width: 205px;
         max-width: none;
     }
+
+
+    /* =====================================================
+       LISTS — TABLET / DESKTOP ONLY
+       Старый вариант маркеров
+       ===================================================== */
+
+
+    /* 1-й уровень — большой чёрный круг */
+
+    .language-section .list-level-1 {
+        padding-left: 0;
+
+        list-style-position: inside;
+    }
+
+    .language-section .list-level-1 > li::marker {
+        content: "●  ";
+        font-size: 0.5em;
+    }
+
+
+    /* 2-й уровень — маленький чёрный круг */
+
+    .language-section .list-level-2 {
+        padding-left: 1.4rem;
+    }
+
+    .language-section .list-level-2 > li::marker {
+        content: "●  ";
+        font-size: 0.35em;
+    }
+
+
+    /* 3-й уровень — маленький чёрный квадрат */
+
+    .language-section .list-level-3 {
+        padding-left: 2.15rem;
+    }
+
+    .language-section .list-level-3 > li::marker {
+        content: "■  ";
+        font-size: 0.35em;
+    }
+
+
+    /* 4-й тип — нумерация 1. 2. 3. */
+
+    .language-section .list-numbered {
+        padding-left: 1.35rem;
+
+        list-style-type: decimal;
+        list-style-position: outside;
+    }
+
+    .language-section .list-numbered > li::marker {
+        font-size: 1.10em;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+
+    /* Цифра и первый абзац остаются на одной строке */
+
+    .language-section .list-numbered > li > p:first-child {
+        display: inline;
+    }
+
+
+    /* Расстояние маркер → текст — TABLET / DESKTOP */
+
+    .language-section .list-level-1 > li,
+    .language-section .list-level-2 > li,
+    .language-section .list-level-3 > li {
+        padding-left: 10px;
+    }
+
 }
 
 
@@ -625,16 +665,6 @@ h3 {
             72px;
     }
 
-       /* LIST MARKER → TEXT GAP — DESKTOP ONLY */
-
-    .language-section .list-level-1 > li,
-    .language-section .list-level-2 > li,
-    .language-section .list-level-3 > li,
-    .language-section .list-numbered > li {
-        padding-left: 10px;
-    }
-
-   
 }
 
 
