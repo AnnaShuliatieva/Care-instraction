@@ -294,6 +294,31 @@ h3 {
     text-align: left;
 }
 
+.language-index a {
+    display: inline-block;
+
+    padding:
+        4px
+        8px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.language-index a:hover,
+.language-index a:focus {
+    background-color: rgba(80, 84, 88, 0.08);
+}
+
+.language-index a:active {
+    transform: translateY(1px);
+}
+
 
 /* These classes still exist in the current HTML,
    but inside the contents they must have no frame. */
