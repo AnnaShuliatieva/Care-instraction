@@ -405,6 +405,7 @@ h3 {
 
 .list-level-1 {
     padding-left: 0rem;
+   list-style-position: inside;
 }
 
 .list-level-1 > li::marker {
@@ -442,6 +443,7 @@ h3 {
 .list-numbered {
     padding-left: 0rem;
     list-style-type: decimal;
+   list-style-position: inside;
 }
 
 .list-numbered > li::marker {
@@ -583,6 +585,8 @@ h3 {
     .language-section .list-numbered > li {
         padding-left: 10px;
     }
+
+   
 }
 
 
