@@ -41,59 +41,7 @@ body {
     background: var(--site-bg);
     color: var(--text);
 
-    font-family:/* LISTS — MOBILE ONLY */
-
-/* 1-й уровень — большой круг */
-.language-section .list-level-1 {
-    padding-left: 0;
-    list-style-position: inside;
-}
-
-.language-section .list-level-1 > li::marker {
-    font-size: 0.42em;
-}
-
-
-/* 2-й уровень — маленький круг */
-.language-section .list-level-2 {
-    padding-left: 1rem;
-}
-
-.language-section .list-level-2 > li::marker {
-    font-size: 0.28em;
-}
-
-
-/* 3-й уровень — квадрат */
-.language-section .list-level-3 {
-    padding-left: 1.25rem;
-}
-
-.language-section .list-level-3 > li::marker {
-    font-size: 0.28em;
-}
-
-
-/* Нумерация 1. 2. 3. */
-.language-section .list-numbered {
-    padding-left: 0;
-    list-style-position: inside;
-}
-
-.language-section .list-numbered > li::marker {
-    font-size: 1em;
-    font-weight: 600;
-}
-
-
-/* Расстояние МАРКЕР → ТЕКСТ — MOBILE */
-.language-section .list-level-1 > li,
-.language-section .list-level-2 > li,
-.language-section .list-level-3 > li,
-.language-section .list-numbered > li {
-    padding-left: 3px;
-}
-        Cambria,
+    font-family: Cambria,
         Georgia,
         "Times New Roman",
         serif;
