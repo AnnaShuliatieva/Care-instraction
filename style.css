@@ -404,7 +404,7 @@ h3 {
 /* 1-й тип — большой чёрный круг */
 
 .list-level-1 {
-    padding-left: 1.45rem;
+    padding-left: 0rem;
 }
 
 .list-level-1 > li::marker {
@@ -416,7 +416,7 @@ h3 {
 /* 2-й тип — маленький чёрный круг */
 
 .list-level-2 {
-    padding-left: 1.8rem;
+    padding-left: 1.4rem;
 }
 
 .list-level-2 > li::marker {
@@ -440,12 +440,12 @@ h3 {
 /* 4-й тип — нумерация 1. 2. 3. */
 
 .list-numbered {
-    padding-left: 1.55rem;
+    padding-left: 0rem;
     list-style-type: decimal;
 }
 
 .list-numbered > li::marker {
-    font-size: 1em;
+    font-size: 1.10em;
     font-weight: 600;
 }
 
