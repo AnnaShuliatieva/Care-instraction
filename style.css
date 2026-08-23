@@ -574,6 +574,15 @@ h3 {
             58px
             72px;
     }
+
+       /* LIST MARKER → TEXT GAP — DESKTOP ONLY */
+
+    .language-section .list-level-1 > li,
+    .language-section .list-level-2 > li,
+    .language-section .list-level-3 > li,
+    .language-section .list-numbered > li {
+        padding-left: 6px;
+    }
 }
 
 
