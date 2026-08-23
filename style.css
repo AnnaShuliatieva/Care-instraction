@@ -294,6 +294,29 @@ h3 {
     text-align: left;
 }
 
+/* FIRST PAGE CONTENTS — independent from instruction lists */
+
+.language-index .index-block ul {
+    margin: 0;
+    padding-left: 1.3rem;
+}
+
+.language-index .index-block li {
+    margin:
+        0.32rem
+        0;
+}
+
+.language-index .index-block h3 {
+    margin:
+        0
+        0
+        0.8rem;
+
+    text-align: left;
+    font-size: 1.15rem;
+}
+
 .language-index a {
     display: inline-block;
 
