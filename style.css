@@ -157,7 +157,6 @@ a:focus {
     display: block;
 
     width: 350px;
-    outline: 2px solid red;
     max-width: 48vw;
 
     height: auto;
