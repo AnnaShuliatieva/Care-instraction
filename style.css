@@ -409,7 +409,7 @@ h3 {
 
 .list-level-1 > li::marker {
     content: "●  ";
-    font-size: 0.6em;
+    font-size: 0.5em;
 }
 
 
@@ -421,7 +421,7 @@ h3 {
 
 .list-level-2 > li::marker {
     content: "●  ";
-    font-size: 0.4em;
+    font-size: 0.35em;
 }
 
 
@@ -433,7 +433,7 @@ h3 {
 
 .list-level-3 > li::marker {
     content: "■  ";
-    font-size: 0.4em;
+    font-size: 0.35em;
 }
 
 
