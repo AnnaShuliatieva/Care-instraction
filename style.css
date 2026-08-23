@@ -567,7 +567,7 @@ h3 {
 
 .language-section .list-level-1 > li::marker {
     content: normal;
-   font-size: 1em;
+   font-size: 2em;
 }
 
 
