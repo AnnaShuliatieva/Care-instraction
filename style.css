@@ -358,16 +358,18 @@ h3 {
    LISTS
    ========================================================= */
 
+/* Общие вертикальные отступы всех списков */
+
 .language-section ul,
 .language-section ol {
     margin:
         0.75rem
         0
         1.15rem;
-
-    padding-left: 1.45rem;
 }
 
+
+/* Расстояние между отдельными пунктами */
 
 .language-section li {
     margin:
@@ -375,7 +377,12 @@ h3 {
         0;
 }
 
-/* Large black circle */
+
+/* 1-й тип — большой чёрный круг */
+
+.list-level-1 {
+    padding-left: 1.45rem;
+}
 
 .list-level-1 > li::marker {
     content: "●  ";
@@ -383,7 +390,11 @@ h3 {
 }
 
 
-/* Small black circle */
+/* 2-й тип — маленький чёрный круг */
+
+.list-level-2 {
+    padding-left: 1.8rem;
+}
 
 .list-level-2 > li::marker {
     content: "●  ";
@@ -391,7 +402,11 @@ h3 {
 }
 
 
-/* Small black square */
+/* 3-й тип — маленький чёрный квадрат */
+
+.list-level-3 {
+    padding-left: 2.15rem;
+}
 
 .list-level-3 > li::marker {
     content: "■  ";
@@ -399,9 +414,10 @@ h3 {
 }
 
 
-/* Numbered list: 1. 2. 3. */
+/* 4-й тип — нумерация 1. 2. 3. */
 
 .list-numbered {
+    padding-left: 1.55rem;
     list-style-type: decimal;
 }
 
@@ -409,21 +425,6 @@ h3 {
     font-size: 1em;
     font-weight: 600;
 }
-
-/* Nested levels remain visibly nested */
-
-.language-section ul ul,
-.language-section ul ol,
-.language-section ol ul,
-.language-section ol ol {
-    margin:
-        0.45rem
-        0
-        0.6rem;
-
-    padding-left: 1.4rem;
-}
-
 
 /* =========================================================
    EMPTY UKRAINIAN PAGE
