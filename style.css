@@ -41,7 +41,8 @@ body {
     background: var(--site-bg);
     color: var(--text);
 
-    font-family: Cambria,
+    font-family:
+        Cambria,
         Georgia,
         "Times New Roman",
         serif;
@@ -231,7 +232,7 @@ h3 {
 
     color: var(--muted);
 
-    font-size: 1.0rem;
+    font-size: 1rem;
     letter-spacing: 0.18em;
 }
 
@@ -278,8 +279,6 @@ h3 {
 /* =========================================================
    CONTENTS
    ENGLISH + UKRAINIAN
-
-   NO INNER FRAMES
    ========================================================= */
 
 .language-index {
@@ -294,7 +293,8 @@ h3 {
 }
 
 
-/* FIRST PAGE CONTENTS — independent from instruction lists */
+/* FIRST PAGE CONTENTS
+   independent from instruction lists */
 
 .language-index .index-block ul {
     margin: 0;
@@ -356,13 +356,10 @@ h3 {
     text-align: left;
 }
 
-
 .language-section > section {
     width: 100%;
-
     scroll-margin-top: 20px;
 }
-
 
 .language-section p {
     margin:
@@ -374,9 +371,10 @@ h3 {
 
 /* =========================================================
    LISTS — COMMON
-   ========================================================= */
 
-/* Общие вертикальные отступы всех списков */
+   ONLY properties common to all screen sizes.
+   Marker styles are NOT defined here.
+   ========================================================= */
 
 .language-section ul,
 .language-section ol {
@@ -385,9 +383,6 @@ h3 {
         0
         1.15rem;
 }
-
-
-/* Расстояние между отдельными пунктами */
 
 .language-section li {
     margin:
@@ -407,6 +402,7 @@ h3 {
 
 /* =========================================================
    MOBILE
+   0–599 px
    ========================================================= */
 
 @media (max-width: 599px) {
@@ -500,7 +496,7 @@ h3 {
     }
 
 
-    /* 4-й тип — нумерация 1. 2. 3. */
+    /* 4-й тип — нумерация */
 
     .language-section .list-numbered {
         padding-left: 1.35rem;
@@ -516,15 +512,14 @@ h3 {
     }
 
 
-    /* Не даём первому абзацу нумерованного пункта
-       уводить цифру на отдельную строку */
+    /* Цифра + первый абзац на одной строке */
 
     .language-section .list-numbered > li > p:first-child {
         display: inline;
     }
 
 
-    /* Расстояние маркер → текст — MOBILE */
+    /* Текущая мобильная геометрия текста относительно маркеров */
 
     .language-section .list-level-1 > li,
     .language-section .list-level-2 > li,
@@ -537,10 +532,11 @@ h3 {
 
 
 /* =========================================================
-   TABLET + DESKTOP LISTS
+   TABLET
+   600–899 px
    ========================================================= */
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 899px) {
 
     .page-shell {
         padding: 16px;
@@ -554,8 +550,107 @@ h3 {
 
 
     /* =====================================================
-       LISTS — TABLET / DESKTOP ONLY
-       Старый вариант маркеров
+       LISTS — TABLET ONLY
+
+       Использует десктопный тип маркеров,
+       но существует как отдельный режим.
+       ===================================================== */
+
+
+    .language-section .list-level-1 {
+        padding-left: 0;
+        list-style-position: inside;
+    }
+
+    .language-section .list-level-1 > li::marker {
+        content: "●  ";
+        font-size: 0.5em;
+    }
+
+
+    .language-section .list-level-2 {
+        padding-left: 1.4rem;
+    }
+
+    .language-section .list-level-2 > li::marker {
+        content: "●  ";
+        font-size: 0.35em;
+    }
+
+
+    .language-section .list-level-3 {
+        padding-left: 2.15rem;
+    }
+
+    .language-section .list-level-3 > li::marker {
+        content: "■  ";
+        font-size: 0.35em;
+    }
+
+
+    .language-section .list-numbered {
+        padding-left: 0;
+
+        list-style-type: decimal;
+        list-style-position: inside;
+    }
+
+    .language-section .list-numbered > li::marker {
+        font-size: 1.10em;
+        font-weight: 600;
+    }
+
+
+    .language-section .list-level-1 > li,
+    .language-section .list-level-2 > li,
+    .language-section .list-level-3 > li,
+    .language-section .list-numbered > li {
+        padding-left: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+   900 px AND WIDER
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+    .page-shell {
+        padding:
+            18px
+            18px
+            34px;
+    }
+
+
+    .ornate-frame--main {
+        padding:
+            45px
+            60px
+            48px;
+    }
+
+
+    .brand-logo {
+        width: 200px;
+    }
+
+
+    .language-section {
+        padding:
+            52px
+            58px
+            72px;
+    }
+
+
+    /* =====================================================
+       LISTS — DESKTOP ONLY
+
+       OLD DESKTOP VERSION RESTORED
        ===================================================== */
 
 
@@ -563,7 +658,6 @@ h3 {
 
     .language-section .list-level-1 {
         padding-left: 0;
-
         list-style-position: inside;
     }
 
@@ -597,72 +691,28 @@ h3 {
     }
 
 
-    /* 4-й тип — нумерация 1. 2. 3. */
+    /* 4-й тип — нумерация */
 
     .language-section .list-numbered {
-        padding-left: 1.35rem;
+        padding-left: 0;
 
         list-style-type: decimal;
-        list-style-position: outside;
+        list-style-position: inside;
     }
 
     .language-section .list-numbered > li::marker {
         font-size: 1.10em;
         font-weight: 600;
-        line-height: 1;
     }
 
 
-    /* Цифра и первый абзац остаются на одной строке */
-
-    .language-section .list-numbered > li > p:first-child {
-        display: inline;
-    }
-
-
-    /* Расстояние маркер → текст — TABLET / DESKTOP */
+    /* Старое desktop-расстояние */
 
     .language-section .list-level-1 > li,
     .language-section .list-level-2 > li,
-    .language-section .list-level-3 > li {
+    .language-section .list-level-3 > li,
+    .language-section .list-numbered > li {
         padding-left: 10px;
-    }
-
-}
-
-
-/* =========================================================
-   DESKTOP
-   ========================================================= */
-
-@media (min-width: 900px) {
-
-    .page-shell {
-        padding:
-            18px
-            18px
-            34px;
-    }
-
-
-    .ornate-frame--main {
-        padding:
-            45px
-            60px
-            48px;
-    }
-
-
-    .brand-logo {
-        width: 200px;
-    }
-
-
-    .language-section {
-        padding:
-            52px
-            58px
-            72px;
     }
 
 }
@@ -689,4 +739,5 @@ h3 {
     .language-section {
         box-shadow: none;
     }
+
 }
